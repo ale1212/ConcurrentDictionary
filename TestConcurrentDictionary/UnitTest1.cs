@@ -44,7 +44,7 @@ namespace TestConcurrentDictionary
 
         [Theory]
         [InlineData(100, "nombre", "apellido")]
-        public void BuscarEdadRepetidasYActualizarDictionaryPersona(int cant, string nomb, string ape)
+        public void BuscarEdadYActualizarDictionaryPersona(int cant, string nomb, string ape)
         {
             int edad = 15;
 
@@ -74,7 +74,7 @@ namespace TestConcurrentDictionary
           
             Console.Write(listas.Count);
             Console.Write(c.Count);
-            /*elimina los registros de misma edad*/
+           
             if (c.Count != 0)
             {
                 foreach (var x in c)
@@ -85,11 +85,11 @@ namespace TestConcurrentDictionary
                     p.IsActivo = true;
                     if(listas.TryUpdate(x.Key, p, x.Value))
                     {
-                        Console.WriteLine("Se ha podido actualizarse");
+                        Console.WriteLine("Se ha podido actualizar");
                     }
                     else
                     {
-                        Console.WriteLine("No se ha podido actualizarse");
+                        Console.WriteLine("No se ha podido actualizar");
                     }
                 }
             }
@@ -104,7 +104,7 @@ namespace TestConcurrentDictionary
 
         [Theory]
         [InlineData(100, "nombre", "apellido")]
-        public void BuscarEdadRepetidasYEliminaDictionaryPersona(int cant, string nomb, string ape)
+        public void BuscarEdadYEliminaDictionaryPersona(int cant, string nomb, string ape)
         {
             int edad = 20;
 
@@ -134,7 +134,7 @@ namespace TestConcurrentDictionary
 
             Console.Write(listas.Count);
             Console.Write(c.Count);
-            /*elimina los registros de misma edad*/
+          
             if (c.Count != 0)
             {
               foreach (var x in c)
